@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Style Image Gallery</title>
+    <link rel="stylesheet" href="image-gallery-css.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Pinterest Gallery</div>
+            <div class="search-bar">
+                <input type="search" placeholder="Tìm kiếm...">
+            </div>
+            <ul class="menu">
+                <li><button>Trang chủ</button></li>
+                <li><button>Khám phá</button></li>
+                <li><button class="upload-btn" onclick="triggerFileInput()">Upload</button></li>
+            </ul>
+            <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
+        </nav>
+    </header>
+
+    <main>
+        <div class="gallery" id="gallery">
+            <!-- Mẫu ảnh -->
+            <div class="item">
+                <img id="img1" alt="Sample Image 1">
+                <h3>Hình 1</h3>
+                <p>Mô tả hình ảnh mẫu đầu tiên</p>
+                <button class="save-btn">Tải xuống</button>
+            </div>
+            <div class="item">
+                <img id="img2" alt="Sample Image 2">
+                <h3>Phong cảnh</h3>
+                <p>Phong cảnh thiên nhiên tuyệt đẹp</p>
+                <button class="save-btn">Tải xuống</button>
+            </div>
+            <div class="item">
+                <img id="img3" alt="Sample Image 3">
+                <h3>Động vật</h3>
+                <p>Các loài động vật dễ thương</p>
+                <button class="save-btn">Tải xuống</button>
+            </div>
+            <div class="item">
+                <img id="img4" alt="Sample Image 4">
+                <h3>Ẩm thực</h3>
+                <p>Món ăn hấp dẫn từ khắp nơi</p>
+                <button class="save-btn">Tải xuống</button>
+            </div>
+            <div class="item">
+                <img id="img5" alt="Sample Image 5">
+                <h3>Kiến trúc</h3>
+                <p>Công trình kiến trúc ấn tượng</p>
+                <button class="save-btn">Tải xuống</button>
+            </div>
+            <div class="item">
+                <img id="img6" alt="Sample Image 5">
+                <h3>Kiến trúc</h3>
+                <p>Công trình kiến trúc ấn tượng</p>
+                <button class="save-btn">Tải xuống</button>
+            </div>
+            <div class="item">
+                <img id="img7" alt="Sample Image 5">
+                <h3>Kiến trúc</h3>
+                <p>Công trình kiến trúc ấn tượng</p>
+                <button class="save-btn">Tải xuống</button>
+            </div>
+            <div class="item">
+                <img id="img8" alt="Sample Image 5">
+                <h3>Kiến trúc</h3>
+                <p>Công trình kiến trúc ấn tượng</p>
+                <button class="save-btn">Tải xuống</button>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Thêm thông tin cho ảnh</h2>
+            <img id="imagePreview" style="display: none; width: 100%; height: auto; margin-bottom: 15px;" alt="Preview">
+            <form id="imageForm">
+                <label for="imageTitle">Tiêu đề:</label>
+                <input type="text" id="imageTitle" name="imageTitle" placeholder="Nhập tiêu đề..." required>
+                <label for="imageDescription">Mô tả:</label>
+                <textarea id="imageDescription" name="imageDescription" placeholder="Nhập mô tả..." required></textarea>
+                <div class="modal-buttons">
+                    <button type="button" onclick="submitImage()">Thêm ảnh</button>
+                    <button type="button" onclick="cancelImage()">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Pinterest Style Gallery. All rights reserved.</p>
+    </footer>
+    
+    <script src="image-gallery-js.js"></script>
+</body>
+</html>
